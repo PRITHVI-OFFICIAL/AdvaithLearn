@@ -50,7 +50,9 @@ return (
         <Text style={{ fontWeight: '400', color: 'white' }}>Bus No: {busno}</Text>
       </View>
 
-      <View style={{ height: "70%", width: 1, backgroundColor: "white", alignSelf: "center" }}></View>
+      <View style={{ height: "70%", width: 1, backgroundColor: "white", alignSelf: "center" }}>
+        
+      </View>
 
       {/* <View style={{ margin: 18, alignSelf: "center" }}>
         <Text style={{ fontSize: 30, fontWeight: "bold", color: "white" }}>{busno}</Text>

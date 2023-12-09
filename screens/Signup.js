@@ -63,10 +63,10 @@ function Signup(){
     return(
         <View style={styles.container}>
             <View style={styles.container1}>
-            {/* <Image
+            <Image
                 source={require('../assets/logo.png')}
                 style={{width: 300, height: 200,alignSelf:"center"}}
-            /> */}
+            />
             </View>
 
             {/* <View style={styles.container2}>
@@ -78,7 +78,7 @@ function Signup(){
 
             <View style={styles.container3}>
             <View style={{marginTop:50}}>
-            <Text style={{fontWeight:"bold",fontSize:30,textAlign:"center",color:"white"}}>Signup</Text>
+            <Text style={{fontWeight:"bold",fontSize:30,textAlign:"center",color:"white"}}>Admin Signup</Text>
 
             <TextInput
             style={styles.input}
@@ -104,7 +104,7 @@ function Signup(){
 
             <TextInput
             style={styles.input}
-            placeholder="Enter Bus Area"
+            placeholder="Enter Bus No"
             autoCapitalize="none"
             keyboardType="email-address"
             textContentType="emailAddress"

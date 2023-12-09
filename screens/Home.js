@@ -145,21 +145,22 @@ function Home() {
 
     <View style={styles.container}>
 
-      <Text style={{fontWeight:"bold",fontSize:20,marginBottom:10}}>Dashboard</Text>
+      <Text style={{fontWeight:"bold",fontSize:20,marginBottom:10}}>Admin Dashboard</Text>
      
       
       <View style={{flexDirection:'row',justifyContent:"space-between",marginTop:10,marginBottom:20}}>
-      <View style={{height:100,width:180,backgroundColor:colors.primary,borderRadius:10,justifyContent:"center",alignItems:"center"}}>
-      <Text style={{fontWeight:"bold",fontSize:15,color:'white'}}>Latitude: {lat}</Text>
+      <View style={{height:100,width:160,backgroundColor:colors.primary,borderRadius:10,justifyContent:"center",alignItems:"center"}}>
+      <Text style={{fontWeight:"bold",fontSize:13,color:'white'}}>Latitude: {lat}</Text>
       </View>
-      <View style={{height:100,width:180,backgroundColor:colors.primary,borderRadius:10,justifyContent:"center",alignItems:"center"}}>
-      <Text style={{fontWeight:"bold",fontSize:15,color:'white'}}>Longitude: {long}</Text>
+      <View style={{height:100,width:160,backgroundColor:colors.primary,borderRadius:10,justifyContent:"center",alignItems:"center"}}>
+      <Text style={{fontWeight:"bold",fontSize:13,color:'white'}}>Longitude: {long}</Text>
       </View>
       </View>
 
 
       <View style={{flexDirection:"row",justifyContent:"space-between"}}>
       <Text style={{fontWeight:"bold",fontSize:15,top:10}}>Share your Bus Location</Text>
+
       <Switch
         trackColor={'orange'}
         thumbColor={isEnabled ? 'green' : 'red'}
@@ -168,6 +169,7 @@ function Home() {
         onChange={isSharingLocation ? stopSharingLocation : shareLocation}
         disabled={!area}
       />
+      
       
 
 
@@ -246,3 +248,5 @@ const styles = StyleSheet.create({
     borderColor:'grey'
   },
 });
+
+

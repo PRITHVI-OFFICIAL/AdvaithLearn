@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { auth,database} from '../config/firebase';
@@ -14,37 +14,38 @@ function AddBuses() {
   const [busno, setbusno] = useState('');
   const [date, setdate] = useState('');
   const [drivername, setdrivername] = useState('');
+  const [mobile,setmobile]=useState('');
 
-  console.log(value);
+function handleSubmit() {
+
+  setDoc(doc(database, 'BusLocations', busno), {
+    route: route,
+    Drivername: drivername,
+    date: date,
+    lattitude: 12.872942598873182,
+    longitude: 80.22606412285278,
+    seatcount: 55,
+    visible: true,
+    mobile:mobile
 
 
-  function handleSubmit() {
-    setDoc(doc(database, 'BusLocations', busno), {
-      route: route,
-      Drivername: drivername,
-      date: date,
-      lattitude: 12.872942598873182,
-      longitude: 80.22606412285278,
-      seatcount: 55,
-      visible: true,
-    });
-    console.log(busno,drivername,date);
-
-    // reset the form inputs
-    setbusno('');
-    setdate('');
-    setdrivername('');
-    setroute('');
-
-    Alert.alert('Success', 'Bus added successfully');
-    console.log('Bus added Successfully');
+  });
+  console.log(busno,drivername,date);
+  setbusno('');
+  setdate('');
+  setdrivername('');
+  setroute('');
+  setmobile('');
+  Alert.alert('Success', 'Bus added successfully');
+  console.log('Bus added Successfully');
   }
 
   return (
     <View style={styles.container}>
       <Text style={{ fontWeight: "bold", fontSize: 20, marginTop: 10, color: 'brown' }}>Add a New Bus</Text>
 
-      <Text style={{ fontSize: 15, fontWeight: "bold", marginTop: 10, marginBottom: 5 }}>Boarding Point</Text>
+      <ScrollView>
+      <Text style={{ fontSize: 15, fontWeight: "bold", marginTop: 15, marginBottom: 5 }}>Boarding Point</Text>
       <TextInput
         style={styles.input}
         placeholder="Enter Bus Route"
@@ -67,12 +68,7 @@ function AddBuses() {
         onChangeText={(text) => setbusno(text)}
       />
 
-      <Text style={{ fontSize: 15, fontWeight: "bold", marginTop: 10, marginBottom: 5 }}>Date</Text>
-
-      <DateTimePicker
-        value={value}
-        onValueChange={(date) => setdate(date.split(" ")[0])}
-      />
+     
 
       <Text style={{ fontSize: 15, fontWeight: "bold", marginTop: 10, marginBottom: 5 }}>Driver Name</Text>
 
@@ -87,9 +83,29 @@ function AddBuses() {
         onChangeText={(text) => setdrivername(text)}
       />
 
+    <Text style={{ fontSize: 15, fontWeight: "bold", marginTop: 10, marginBottom: 5 }}>Driver Mobile Number</Text>
+
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Mobile Number"
+        autoCapitalize="none"
+        keyboardType="phone-pad"
+        maxLength={10}
+        autoFocus={true}
+        value={mobile}
+        onChangeText={setmobile}
+      />
+
+<Text style={{ fontSize: 15, fontWeight: "bold", marginTop: 10, marginBottom: 5 }}>Date</Text>
+
+<DateTimePicker
+  value={value}
+  onValueChange={(date) => setdate(date.split(" ")[0])}
+/>
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Text style={{ fontWeight: 'bold', color: '#fff', fontSize: 18 }}>Submit</Text>
       </TouchableOpacity>
+      </ScrollView>
 
     </View>
   );

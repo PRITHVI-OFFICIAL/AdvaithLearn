@@ -13,6 +13,7 @@ import Login from './screens/Login';
 import Home from './screens/Home';
 import Signup from "./screens/Signup";
 import AddBuses from "./screens/AddBuses";
+import UserProfile from "./screens/UserProfile";
 
 
 
@@ -50,7 +51,15 @@ function ChatStack() {
       <Tab.Screen name="Add Buses" component={AddBuses}  options={{ tabBarIcon:({size,color})=>(
             <FontAwesome name="bus" size={25} color={colors.primary} />
           ),}} />
+
+      <Tab.Screen name="UserProfile" component={UserProfile}  options={{ tabBarIcon:({size,color})=>(
+            <FontAwesome name="user" size={25} color={colors.primary} />
+          ),}} />
     </Tab.Navigator>
+
+ 
+
+    
 
 
   );

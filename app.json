@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AdvaithLearn",
-    "slug": "AdvaithLearn",
+    "name": "NavigoAdmin",
+    "slug": "NavigoAdmin",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#F86F03"
     },
     "assetBundlePatterns": [
       "**/*"

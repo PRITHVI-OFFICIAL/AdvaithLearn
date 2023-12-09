@@ -25,10 +25,10 @@ function Login(){
         <View style={styles.container}>
             <View style={styles.container1}>
                 
-            {/* <Image
+            <Image
                source={require('../assets/logo.png')}
                 style={{width: 300, height: 200,alignSelf:"center"}}
-            /> */}
+            /> 
             </View>
 
             {/* <View style={styles.container2}>
@@ -40,7 +40,7 @@ function Login(){
 
             <View style={styles.container3}>
             <View style={{marginTop:50}}>
-            <Text style={{fontWeight:"bold",fontSize:30,textAlign:"center",color:"white"}}>Login</Text>
+            <Text style={{fontWeight:"bold",fontSize:30,textAlign:"center",color:"white"}}>Admin Login</Text>
             
             <TextInput
             style={styles.input}
